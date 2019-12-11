@@ -30,8 +30,9 @@ RUN apt-get -y update && \
 # install python dependencies
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
 	python3 get-pip.py && \
-	rm get-pip.py 
-	
+	rm get-pip.py
+
+
 # Install OpenCV
 RUN cd / && \
 	wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip -O opencv3.zip && \
@@ -83,7 +84,6 @@ RUN mkdir /opencv/build && cd /opencv/build && \
     && \
     apt-get clean && \
     rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
-
 
 WORKDIR /Desktop
 # Define default command.
